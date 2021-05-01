@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2018-2019 The Fujicoin Core developers
+# Copyright (c) 2018-2019 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -27,7 +27,7 @@ def setup():
     subprocess.check_call(['sudo', 'apt-get', 'install', '-qq'] + programs)
     if not os.path.isdir('gitian.sigs'):
         subprocess.check_call(['git', 'clone', 'https://github.com/bitcoin-core/gitian.sigs.git'])
-    if not os.path.isdir('fujicoin-detached-sigs'):
+    if not os.path.isdir('bitcoin-detached-sigs'):
         subprocess.check_call(['git', 'clone', 'https://github.com/bitcoin-core/bitcoin-detached-sigs.git'])
     if not os.path.isdir('gitian-builder'):
         subprocess.check_call(['git', 'clone', 'https://github.com/devrandom/gitian-builder.git'])
@@ -228,7 +228,7 @@ def main():
     # Add leading 'v' for tags
     if args.commit and args.pull:
         raise Exception('Cannot have both commit and pull')
-    args.commit = ('' if args.commit else 'v') + args.version
+    args.commit = args.version
 
     os.chdir('fujicoin')
     if args.pull:
