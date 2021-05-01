@@ -1,5 +1,5 @@
 Fujicoin version 0.4.1 is now available for download at:
-http://sourceforge.net/projects/fujicoin/files/Fujicoin/fujicoin-0.4.1/
+http://sourceforge.net/projects/bitcoin/files/Bitcoin/bitcoin-0.4.1/
 
 This is a bugfix only release based on 0.4.0.
 

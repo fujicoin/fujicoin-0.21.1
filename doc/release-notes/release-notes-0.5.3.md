@@ -1,14 +1,14 @@
 Fujicoin version 0.5.3 is now available for download at:
-http://sourceforge.net/projects/fujicoin/files/Fujicoin/fujicoin-0.5.3/
+http://sourceforge.net/projects/bitcoin/files/Bitcoin/bitcoin-0.5.3/
 
 This is a bugfix-only release based on 0.5.1.
 It also includes a few protocol updates.
 
 Please report bugs using the issue tracker at github:
-https://github.com/fujicoin/fujicoin/issues
+https://github.com/bitcoin/bitcoin/issues
 
 Stable source code is hosted at Gitorious:
-http://gitorious.org/fujicoin/fujicoind-stable/archive-tarball/v0.5.3#.tar.gz
+http://gitorious.org/bitcoin/bitcoind-stable/archive-tarball/v0.5.3#.tar.gz
 
 PROTOCOL UPDATES
 

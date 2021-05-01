@@ -22,7 +22,7 @@ libtool
 pkg-config
 python37
 
-git clone https://github.com/fujicoin/fujicoin.git
+git clone https://github.com/bitcoin/bitcoin.git
 ```
 
 See [dependencies.md](dependencies.md) for a complete overview.

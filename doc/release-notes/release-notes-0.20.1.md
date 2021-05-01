@@ -3,18 +3,18 @@
 
 Fujicoin Core version 0.20.1 is now available from:
 
-  <https://fujicoincore.org/bin/fujicoin-core-0.20.1/>
+  <https://bitcoincore.org/bin/bitcoin-core-0.20.1/>
 
 This minor release includes various bug fixes and performance
 improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/fujicoin/fujicoin/issues>
+  <https://github.com/bitcoin/bitcoin/issues>
 
 To receive security and update notifications, please subscribe to:
 
-  <https://fujicoincore.org/en/list/announcements/join/>
+  <https://bitcoincore.org/en/list/announcements/join/>
 
 How to Upgrade
 ==============
@@ -90,7 +90,7 @@ Notification changes
 removed from the mempool because they conflict with a new block. These
 notifications were sent previously before the v0.19 release, but had been
 broken since that release (bug
-[#18325](https://github.com/fujicoin/fujicoin/issues/18325)).
+[#18325](https://github.com/bitcoin/bitcoin/issues/18325)).
 
 PSBT changes
 ------------
@@ -155,4 +155,4 @@ Thanks to everyone who directly contributed to this release:
 - Wladimir J. van der Laan
 
 As well as to everyone that helped with translations on
-[Transifex](https://www.transifex.com/fujicoin/fujicoin/).
+[Transifex](https://www.transifex.com/bitcoin/bitcoin/).

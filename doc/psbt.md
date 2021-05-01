@@ -2,7 +2,7 @@
 
 Since Fujicoin Core 0.17, an RPC interface exists for Partially Signed Fujicoin
 Transactions (PSBTs, as specified in
-[BIP 174](https://github.com/fujicoin/bips/blob/master/bip-0174.mediawiki)).
+[BIP 174](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki)).
 
 This document describes the overall workflow for producing signed transactions
 through the use of PSBT, and the specific RPC commands used in typical
@@ -14,7 +14,7 @@ PSBT is an interchange format for Fujicoin transactions that are not fully signe
 yet, together with relevant metadata to help entities work towards signing it.
 It is intended to simplify workflows where multiple parties need to cooperate to
 produce a transaction. Examples include hardware wallets, multisig setups, and
-[CoinJoin](https://fujicointalk.org/?topic=279249) transactions.
+[CoinJoin](https://bitcointalk.org/?topic=279249) transactions.
 
 ### Overall workflow
 

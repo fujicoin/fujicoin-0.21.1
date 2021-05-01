@@ -1,6 +1,6 @@
 Fujicoin Core version 0.10.4 is now available from:
 
-  <https://fujicoin.org/bin/fujicoin-core-0.10.4/>
+  <https://bitcoin.org/bin/bitcoin-core-0.10.4/>
 
 This is a new minor version release, bringing bug fixes, the BIP65
 (CLTV) consensus change, and relay policy preparation for BIP113. It is
@@ -8,7 +8,7 @@ recommended to upgrade to this version as soon as possible.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/fujicoin/fujicoin/issues>
+  <https://github.com/bitcoin/bitcoin/issues>
 
 Upgrading and downgrading
 =========================
@@ -68,16 +68,16 @@ specified point in the future.
    blocks if they comply with the BIP65 rules for CLTV.
 
 For more information about the soft-forking change, please see
-<https://github.com/fujicoin/fujicoin/pull/6351>
+<https://github.com/bitcoin/bitcoin/pull/6351>
 
 Graphs showing the progress towards block version 4 adoption may be
 found at the URLs below:
 
 - Block versions over the last 50,000 blocks as progress towards BIP65
-  consensus enforcement: <http://fujicoin.sipa.be/ver-50k.png>
+  consensus enforcement: <http://bitcoin.sipa.be/ver-50k.png>
 
 - Block versions over the last 2,000 blocks showing the days to the
-  earliest possible BIP65 consensus-enforced block: <http://fujicoin.sipa.be/ver-2k.png>
+  earliest possible BIP65 consensus-enforced block: <http://bitcoin.sipa.be/ver-2k.png>
 
 **Notice to miners:** Fujicoin Core’s block templates are now for
 version 4 blocks only, and any mining software relying on its
@@ -95,7 +95,7 @@ version FIXME or any version from FIXME onward.
   will affect you at the pool operator’s discretion, which must be no
   later than BIP65 achieving its 951/1001 status.
 
-[BIP65]: https://github.com/fujicoin/bips/blob/master/bip-0065.mediawiki
+[BIP65]: https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki
 
 Windows bug fix for corrupted UTXO database on unclean shutdowns
 ----------------------------------------------------------------
@@ -107,7 +107,7 @@ remain unsafe, this release no longer relies on memory-mapped files for
 the UTXO database, which significantly reduced the frequency of unclean
 shutdowns leading to required reindexes during testing.
 
-For more information, see: <https://github.com/fujicoin/fujicoin/pull/6917>
+For more information, see: <https://github.com/bitcoin/bitcoin/pull/6917>
 
 Other fixes for database corruption on Windows are expected in the
 next major release.
@@ -169,4 +169,4 @@ Thanks to everyone who directly contributed to this release:
 
 And those who contributed additional code review and/or security research.
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/fujicoin/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoin/).

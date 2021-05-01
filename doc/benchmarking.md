@@ -45,6 +45,6 @@ More benchmarks are needed for, in no particular order:
 Going Further
 --------------------
 
-To monitor Fujicoin Core performance more in depth (like reindex or IBD): https://github.com/chaincodelabs/fujicoinperf
+To monitor Fujicoin Core performance more in depth (like reindex or IBD): https://github.com/chaincodelabs/bitcoinperf
 
-To generate Flame Graphs for Fujicoin Core: https://github.com/eklitzke/fujicoin/blob/flamegraphs/doc/flamegraphs.md
+To generate Flame Graphs for Fujicoin Core: https://github.com/eklitzke/bitcoin/blob/flamegraphs/doc/flamegraphs.md

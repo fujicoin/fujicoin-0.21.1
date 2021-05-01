@@ -23,7 +23,7 @@ packages:
 - "ca-certificates"
 - "python3"
 remotes:
-- "url": "https://github.com/fujicoin/fujicoin.git"
+- "url": "https://github.com/bitcoin/bitcoin.git"
   "dir": "fujicoin"
 files: []
 script: |

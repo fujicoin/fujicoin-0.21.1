@@ -5,7 +5,7 @@ Setup
 ---------------------
 Fujicoin Core is the original Fujicoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Fujicoin transactions, which requires a few hundred gigabytes of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Fujicoin Core, visit [fujicoincore.org](https://fujicoincore.org/en/download/).
+To download Fujicoin Core, visit [bitcoincore.org](https://bitcoincore.org/en/download/).
 
 Running
 ---------------------
@@ -28,10 +28,10 @@ Drag Fujicoin Core to your applications folder, and then run Fujicoin Core.
 
 ### Need Help?
 
-* See the documentation at the [Fujicoin Wiki](https://en.fujicoin.it/wiki/Main_Page)
+* See the documentation at the [Fujicoin Wiki](https://en.bitcoin.it/wiki/Main_Page)
 for help and more information.
-* Ask for help on [#fujicoin](https://webchat.freenode.net/#fujicoin) on Freenode. If you don't have an IRC client, use [webchat here](https://webchat.freenode.net/#fujicoin).
-* Ask for help on the [FujicoinTalk](https://fujicointalk.org/) forums, in the [Technical Support board](https://fujicointalk.org/index.php?board=4.0).
+* Ask for help on [#fujicoin](https://webchat.freenode.net/#bitcoin) on Freenode. If you don't have an IRC client, use [webchat here](https://webchat.freenode.net/#bitcoin).
+* Ask for help on the [FujicoinTalk](https://bitcointalk.org/) forums, in the [Technical Support board](https://bitcointalk.org/index.php?board=4.0).
 
 Building
 ---------------------
@@ -44,7 +44,7 @@ The following are developer notes on how to build Fujicoin Core on your native p
 - [FreeBSD Build Notes](build-freebsd.md)
 - [OpenBSD Build Notes](build-openbsd.md)
 - [NetBSD Build Notes](build-netbsd.md)
-- [Gitian Building Guide (External Link)](https://github.com/fujicoin-core/docs/blob/master/gitian-building.md)
+- [Gitian Building Guide (External Link)](https://github.com/bitcoin-core/docs/blob/master/gitian-building.md)
 
 Development
 ---------------------
@@ -54,7 +54,7 @@ The Fujicoin repo's [root README](/README.md) contains relevant information on t
 - [Productivity Notes](productivity.md)
 - [Release Notes](release-notes.md)
 - [Release Process](release-process.md)
-- [Source Code Documentation (External Link)](https://doxygen.fujicoincore.org/)
+- [Source Code Documentation (External Link)](https://doxygen.bitcoincore.org/)
 - [Translation Process](translation_process.md)
 - [Translation Strings Policy](translation_strings_policy.md)
 - [JSON-RPC Interface](JSON-RPC-interface.md)
@@ -66,8 +66,8 @@ The Fujicoin repo's [root README](/README.md) contains relevant information on t
 
 ### Resources
 * Discuss on the [FujicoinTalk](https://fujicointalk.org/) forums, in the [Development & Technical Discussion board](https://fujicointalk.org/index.php?board=6.0).
-* Discuss project-specific development on #fujicoin-core-dev on Freenode. If you don't have an IRC client, use [webchat here](https://webchat.freenode.net/#fujicoin-core-dev).
-* Discuss general Fujicoin development on #fujicoin-dev on Freenode. If you don't have an IRC client, use [webchat here](https://webchat.freenode.net/#fujicoin-dev).
+* Discuss project-specific development on #fujicoin-core-dev on Freenode. If you don't have an IRC client, use [webchat here](https://webchat.freenode.net/#bitcoin-core-dev).
+* Discuss general Fujicoin development on #fujicoin-dev on Freenode. If you don't have an IRC client, use [webchat here](https://webchat.freenode.net/#bitcoin-dev).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

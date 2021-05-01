@@ -23,7 +23,7 @@ don't have test cases for.
 - The oldest supported Python version is specified in [doc/dependencies.md](/doc/dependencies.md).
   Consider using [pyenv](https://github.com/pyenv/pyenv), which checks [.python-version](/.python-version),
   to prevent accidentally introducing modern syntax from an unsupported Python version.
-  The Travis linter also checks this, but [possibly not in all cases](https://github.com/fujicoin/fujicoin/pull/14884#discussion_r239585126).
+  The Travis linter also checks this, but [possibly not in all cases](https://github.com/bitcoin/bitcoin/pull/14884#discussion_r239585126).
 - See [the python lint script](/test/lint/lint-python.sh) that checks for violations that
   could lead to bugs and issues in the test code.
 - Use [type hints](https://docs.python.org/3/library/typing.html) in your code to improve code readability
@@ -135,7 +135,7 @@ The following are useful modules for test developers. They are located in
 [test/functional/test_framework/](test_framework).
 
 #### [authproxy.py](test_framework/authproxy.py)
-Taken from the [python-fujicoinrpc repository](https://github.com/jgarzik/python-fujicoinrpc).
+Taken from the [python-fujicoinrpc repository](https://github.com/jgarzik/python-bitcoinrpc).
 
 #### [test_framework.py](test_framework/test_framework.py)
 Base class for functional tests.

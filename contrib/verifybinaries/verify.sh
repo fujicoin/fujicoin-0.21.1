@@ -4,7 +4,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 ###   This script attempts to download the signature file SHA256SUMS.asc from
-###   fujicoincore.org and fujicoin.org and compares them.
+###   bitcoincore.org and fujicoin.org and compares them.
 ###   It first checks if the signature passes, and then downloads the files specified in
 ###   the file, and checks if the hashes of these files match those that are specified
 ###   in the signature file.
@@ -24,8 +24,8 @@ TMPFILE="hashes.tmp"
 
 SIGNATUREFILENAME="SHA256SUMS.asc"
 RCSUBDIR="test"
-HOST1="https://fujicoincore.org"
-HOST2="https://fujicoin.org"
+HOST1="https://bitcoincore.org"
+HOST2="https://bitcoin.org"
 BASEDIR="/bin/"
 VERSIONPREFIX="fujicoin-core-"
 RCVERSIONSTRING="rc"
@@ -93,7 +93,7 @@ if ! WGETOUT=$(wget -N "$HOST1$BASEDIR$SIGNATUREFILENAME" 2>&1); then
 fi
 
 if ! WGETOUT=$(wget -N -O "$SIGNATUREFILENAME.2" "$HOST2$BASEDIR$SIGNATUREFILENAME" 2>&1); then
-   echo "fujicoin.org failed to provide signature file, but fujicoincore.org did?"
+   echo "fujicoin.org failed to provide signature file, but bitcoincore.org did?"
    echo "wget output:"
    # shellcheck disable=SC2001
    echo "$WGETOUT"|sed 's/^/\t/g'
@@ -103,7 +103,7 @@ fi
 
 SIGFILEDIFFS="$(diff $SIGNATUREFILENAME $SIGNATUREFILENAME.2)"
 if [ "$SIGFILEDIFFS" != "" ]; then
-   echo "fujicoin.org and fujicoincore.org signature files were not equal?"
+   echo "fujicoin.org and bitcoincore.org signature files were not equal?"
    clean_up $SIGNATUREFILENAME $SIGNATUREFILENAME.2
    exit 4
 fi

@@ -3,18 +3,18 @@
 
 Fujicoin Core version 0.20.0 is now available from:
 
-  <https://fujicoincore.org/bin/fujicoin-core-0.20.0/>
+  <https://bitcoincore.org/bin/bitcoin-core-0.20.0/>
 
 This release includes new features, various bug fixes and performance
 improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/fujicoin/fujicoin/issues>
+  <https://github.com/bitcoin/bitcoin/issues>
 
 To receive security and update notifications, please subscribe to:
 
-  <https://fujicoincore.org/en/list/announcements/join/>
+  <https://bitcoincore.org/en/list/announcements/join/>
 
 How to Upgrade
 ==============
@@ -163,8 +163,8 @@ New settings
 - A new `-asmap` configuration option has been added to diversify the
   node's network connections by mapping IP addresses Autonomous System
   Numbers (ASNs) and then limiting the number of connections made to any
-  single ASN.  See [issue #16599](https://github.com/fujicoin/fujicoin/issues/16599),
-  [PR #16702](https://github.com/fujicoin/fujicoin/pull/16702), and the
+  single ASN.  See [issue #16599](https://github.com/bitcoin/bitcoin/issues/16599),
+  [PR #16702](https://github.com/bitcoin/bitcoin/pull/16702), and the
   `fujicoind help` for more information.  This option is experimental and
   subject to removal or breaking changes in future releases, so the
   legacy /16 prefix mapping of IP addresses remains the default.  (#16702)
@@ -206,7 +206,7 @@ GUI changes
   peer selection. See the `-asmap` configuration option in _New
   Settings_, above.  (#18402)
 
-- A "known bug" [announced](https://fujicoincore.org/en/releases/0.18.0/#wallet-gui)
+- A "known bug" [announced](https://bitcoincore.org/en/releases/0.18.0/#wallet-gui)
   in the release notes of version 0.18 has been fixed.  The issue
   affected anyone who simultaneously used multiple Fujicoin Core wallets
   and the GUI coin control feature. (#18894)
@@ -215,7 +215,7 @@ GUI changes
   or fee bumping an existing transaction in the Transactions screen will
   automatically copy a Partially-Signed Fujicoin Transaction (PSBT) to
   the system clipboard.  This can then be pasted into an external
-  program such as [HWI](https://github.com/fujicoin-core/HWI) for
+  program such as [HWI](https://github.com/bitcoin-core/HWI) for
   signing.  Future versions of Fujicoin Core should support a GUI option
   for finalizing and broadcasting PSBTs, but for now the debug console
   may be used with the `finalizepsbt` and `sendrawtransaction` RPCs.
@@ -247,7 +247,7 @@ Documentation changes
 ---------------------
 
 - Fujicoin Core's automatically-generated source code documentation is
-  now available at https://doxygen.fujicoincore.org.  (#17596)
+  now available at https://doxygen.bitcoincore.org.  (#17596)
 
 Low-level changes
 =================
@@ -775,7 +775,7 @@ Build system
 - #17503 Remove bitness from fujicoin-qt help message and manpage (laanwj)
 - #17539 Update and improve Developer Notes (hebasto)
 - #17561 Changed MiniUPnPc link to https in dependencies.md (sandakersmann)
-- #17596 Change doxygen URL to doxygen.fujicoincore.org (laanwj)
+- #17596 Change doxygen URL to doxygen.bitcoincore.org (laanwj)
 - #17598 Update release process with latest changes (MarcoFalke)
 - #17617 Unify unix epoch time descriptions (jonatack)
 - #17637 script: Add keyserver to verify-commits readme (emilengler)
@@ -984,4 +984,4 @@ Thanks to everyone who directly contributed to this release:
 - Zero
 
 As well as to everyone that helped with translations on
-[Transifex](https://www.transifex.com/fujicoin/fujicoin/).
+[Transifex](https://www.transifex.com/bitcoin/bitcoin/).
