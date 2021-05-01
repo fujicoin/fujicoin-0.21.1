@@ -674,8 +674,9 @@ static bool PeerHasHeader(CNodeState *state, const CBlockIndex *pindex) EXCLUSIV
 
 /** Update pindexLastCommonBlock and add not-in-flight missing successors to vBlocks, until it has
  *  at most count entries. */
-static void FindNextBlocksToDownload(NodeId nodeid, unsigned int count, std::vector<const CBlockIndex*>& vBlocks, NodeId& nodeStaller, const Consensus::Params& consensusParams) EXCLUSIVE_LOCKS_REQUIRED(cs_main)
+static void FindNextBlocksToDownload(CNode* pto, unsigned int count, std::vector<const CBlockIndex*>& vBlocks, NodeId& nodeStaller, const Consensus::Params& consensusParams) EXCLUSIVE_LOCKS_REQUIRED(cs_main)
 {
+    NodeId nodeid = pto->GetId();
     if (count == 0)
         return;
 
@@ -702,7 +703,20 @@ static void FindNextBlocksToDownload(NodeId nodeid, unsigned int count, std::vec
     state->pindexLastCommonBlock = LastCommonAncestor(state->pindexLastCommonBlock, state->pindexBestKnownBlock);
     if (state->pindexLastCommonBlock == state->pindexBestKnownBlock)
         return;
+    
+    if (::ChainstateActive().IsStartUp > 0 && state->pindexBestKnownBlock->nHeight - ::ChainActive().Height() <= 1 && ::ChainActive().Height() - state->pindexLastCommonBlock->nHeight <= 1){
+        ::ChainstateActive().IsStartUp -= 1;
+        LogPrintf("::Set ChainstateActive().IsStartUp=%d\n", ::ChainstateActive().IsStartUp);
+    }
 
+    // Introduce settlement to Fujicoin's block chain.
+    // Payment will be settled with 6 confirmations.
+    if(::ChainstateActive().IsStartUp < 1 && ::ChainActive().Height() - state->pindexLastCommonBlock->nHeight >= 6){
+        LogPrintf("::Peer disconnected: Over Height=%d peer=%d\n", ::ChainActive().Height() - state->pindexLastCommonBlock->nHeight, pto->GetId());
+        pto->fDisconnect = true;
+        return;
+    }
+    
     std::vector<const CBlockIndex*> vToFetch;
     const CBlockIndex *pindexWalk = state->pindexLastCommonBlock;
     // Never fetch further than the best block we know the peer has, or more than BLOCK_DOWNLOAD_WINDOW + 1 beyond the last
@@ -835,7 +849,7 @@ void PeerManager::ReattemptInitialBroadcast(CScheduler& scheduler) const
 
     // Schedule next run for 10-15 minutes in the future.
     // We add randomness on every cycle to avoid the possibility of P2P fingerprinting.
-    const std::chrono::milliseconds delta = std::chrono::minutes{10} + GetRandMillis(std::chrono::minutes{5});
+    const std::chrono::milliseconds delta = std::chrono::minutes{1} + GetRandMillis(std::chrono::minutes{1});
     scheduler.scheduleFromNow([&] { ReattemptInitialBroadcast(scheduler); }, delta);
 }
 
@@ -4531,7 +4545,7 @@ bool PeerManager::SendMessages(CNode* pto)
         if (!pto->fClient && ((fFetch && !pto->m_limited_node) || !::ChainstateActive().IsInitialBlockDownload()) && state.nBlocksInFlight < MAX_BLOCKS_IN_TRANSIT_PER_PEER) {
             std::vector<const CBlockIndex*> vToDownload;
             NodeId staller = -1;
-            FindNextBlocksToDownload(pto->GetId(), MAX_BLOCKS_IN_TRANSIT_PER_PEER - state.nBlocksInFlight, vToDownload, staller, consensusParams);
+            FindNextBlocksToDownload(pto, MAX_BLOCKS_IN_TRANSIT_PER_PEER - state.nBlocksInFlight, vToDownload, staller, consensusParams);
             for (const CBlockIndex *pindex : vToDownload) {
                 uint32_t nFetchFlags = GetFetchFlags(*pto);
                 vGetData.push_back(CInv(MSG_BLOCK | nFetchFlags, pindex->GetBlockHash()));
